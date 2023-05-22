@@ -12,7 +12,6 @@ def liste_mots():
 
 # Affiche le mot actuel non trouvé
 def afficher_mot(mot, lettres_actuelles):
-    global mot_act
     mot_actuel = ""
 
     for i in mot:
