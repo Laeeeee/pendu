@@ -45,7 +45,7 @@ def renvoie_mot(mot, lettres_actuelles):
 def jouer_pendu():
     mot = liste_mots()
     lettres_trouvees = [] #listes les lettres trouvées correctes
-    lettres_rentree = [] # lites les lettres déjà rentrée
+    lettres_rentree = [] # listes les lettres déjà rentrées
     nb_chances = 6
 
     print("Bienvenue dans le jeu du pendu !")
@@ -57,7 +57,7 @@ def jouer_pendu():
         #affiche le mot dans son état actuel
         afficher_mot(mot, lettres_trouvees)
 
-        #condition de défaite qui casse la boucle while
+        #condition de défaite qui casse la boucle while et arrête le jeu
         if nb_chances == 0:
             print(f"Perdu ! Plus de chances disponibles! Le mot était {mot}.")
             break
@@ -81,14 +81,14 @@ def jouer_pendu():
             print(f"Bonne lettre ! La lettre {i} appartient au mot.")
             lettres_trouvees.append(i)
         else:
-            #ne nombre de cha,ce diminue si c'est une mauvaise lettre
+            #Le nombre de chance diminue si c'est une mauvaise lettre
             print(f"Mauvaise lettre ! La lettre {i} n'appartient pas au mot.")
             nb_chances -= 1
 
         #affiche au joueur les lettres déjà rentrées
         print("Lettres déjà utilisées :", lettres_rentree)
 
-    #condition pour indiquer que le jouer a gagné
+    #condition pour indiquer que le joueur ait gagné
     if mot == renvoie_mot(mot, lettres_trouvees) :
         print(f"Félicitations ! Vous avez deviné le mot {mot}.")
 
